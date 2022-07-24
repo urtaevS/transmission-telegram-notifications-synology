@@ -1,4 +1,4 @@
-# Bash script that sends a message to the telegram bot after the transmission finishes downloading a torrent.
+# Bash script that sends a message to the telegram bot after the transmission finishes downloading a torrent. (changed README for synology nas)
 
 #### Bash script [here](https://github.com/ricardotx/transmission-telegram-notifications/blob/master/src/transmission_telegram_notification.sh)
 
@@ -8,7 +8,9 @@
 
  * Stop tansmission-deamon service
 
-    `sudo service transmission-daemon stop`
+    `sudo synopkg stop transmission`
+    
+    or stop from Web UI
 
  * Allow the execution of the script
 
@@ -16,7 +18,11 @@
 
  * Open the transmission-daemon settings file
 
-     `sudo nano /etc/transmission-daemon/settings.json`
+     `sudo nano /volume1/@appstore/transmission/var/settings.json`
+     
+     or
+     
+     `sudo vim /volume1/@appstore/transmission/var/settings.json`
 
     Change the following:
       ```json
@@ -26,7 +32,9 @@
 
   * Save the changes and start the transmission-daemon service
      
-     `sudo service transmission-daemon start`
+     `sudo synopkg start transmission`
+     
+     or start from Web UI
 
 **Note:** *Those variables are inherited from Transmission*
     
